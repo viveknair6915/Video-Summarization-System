@@ -67,7 +67,7 @@ Open your web browser and navigate to http://localhost:8501 to access the Readin
   
 ## Technologies Used
 
-**Flask**: Web framework for building the application.
+**Python**: Programming language used for backend development.
 
 **NLTK**: Natural Language Toolkit for processing text.
 
