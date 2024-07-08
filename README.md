@@ -16,9 +16,10 @@ Video Summarization App built using open source LLM and Framework like Llama 2, 
 
 ## Features
 
-- **Text Summarization**: Automatically generate concise summaries of long texts.
-- **Interactive Reading**: Enhance your reading with interactive features and tools.
-
+- Fast and accurate summarization of YouTube videos.
+- User-friendly interface powered by Streamlit.
+- Utilizes LangChain and Whisper frameworks for efficient processing and summarization.
+- 
 ## Installation
 
 To get started with the Reading Companion Project, follow these steps:
@@ -48,8 +49,7 @@ source venv/bin/activate   # On Windows, use `venv\Scripts\activate`
 pip install -r requirements.txt
 ```
 
-## Usage
-After installing the necessary dependencies, you can start the application by running:
+5. After installing the necessary dependencies, you can start the application by running:
 
 
 ```bash
@@ -59,9 +59,13 @@ streamlit run yt_summary.py
 
 Open your web browser and navigate to http://localhost:8501 to access the Reading Companion interface.
 
-## Technologies Used
+## Usage
 
-**Python**: Programming language used for backend development.
+- On launching the app, you will be prompted to enter a YouTube URL.
+- Paste the URL and hit 'Summarize'.
+- The app will then process the video, leveraging LLM and the other frameworks to generate a succinct summary which will be displayed on the same page.
+  
+## Technologies Used
 
 **Flask**: Web framework for building the application.
 
@@ -69,11 +73,11 @@ Open your web browser and navigate to http://localhost:8501 to access the Readin
 
 **Transformers**: Hugging Face library for state-of-the-art natural language processing.
 
-**HTML/CSS**: Frontend technologies for building the user interface.
+**PyTube**: For downloading YouTube videos.
 
 **Llama 2**: A large language model used for generating summaries.
 
-**Haystack**: An open-source NLP framework to perform question answering.
+**Haystack**: An open-source LLM framework to build production ready applications.
 
 **Whisper**: A robust speech-to-text model used for transcribing video content.
 
