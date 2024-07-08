@@ -19,7 +19,7 @@ Video Summarization App built using open source LLM and Framework like Llama 2, 
 - Fast and accurate summarization of YouTube videos.
 - User-friendly interface powered by Streamlit.
 - Utilizes LangChain and Whisper frameworks for efficient processing and summarization.
-- 
+  
 ## Installation
 
 To get started with the Reading Companion Project, follow these steps:
