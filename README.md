@@ -30,21 +30,27 @@ To get started with the Reading Companion Project, follow these steps:
 python -m venv venv
 source venv/bin/activate   # On Windows, use `venv\Scripts\activate`
 
+
 3. **Download the required Model**
  a) TheBloke/Llama-2-13B-chat-GGUF : "https://huggingface.co/TheBloke/Llama-2-13B-chat-GGUF/blob/main/llama-2-13b-chat.Q4_K_S.gguf"
  b) TheBloke/Llama-2-7B-32K-Instruct-GGUF : "https://huggingface.co/TheBloke/Llama-2-7B-32K-Instruct-GGUF/blob/main/llama-2-7b-32k-instruct.Q4_K_S.gguf"
 
+
 4. **Install the required dependencies**
+
 
 ```bash
 pip install -r requirements.txt
 
+
 ## Usage
 After installing the necessary dependencies, you can start the application by running:
+
 
 ```bash
 cd YouTube-Video-Summarization-App-main
 streamlit run yt_summary.py
+
 
 Open your web browser and navigate to http://localhost:8501 to access the Reading Companion interface.
 
