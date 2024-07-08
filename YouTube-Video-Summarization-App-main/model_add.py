@@ -11,7 +11,7 @@ logger = logging.getLogger(__name__)
 class LlamaCPPInvocationLayer(PromptModelInvocationLayer):
     def __init__(self, model_name_or_path: Union[str,os.PathLike],
         max_length: Optional[int] = 128,
-        max_context: Optional[int] = 32000,
+        max_context: Optional[int] = 3200,
         n_parts: Optional[int] = -1,
         seed: Optional[int]= 1337,
         f16_kv: Optional[bool] = True,
@@ -28,12 +28,6 @@ class LlamaCPPInvocationLayer(PromptModelInvocationLayer):
         verbose: Optional[bool] = True,
         **kwargs):
 
-        """
-        Creates a new Llama CPP InvocationLayer instance.
-
-        :param model_name_or_path: The name or path of the underlying model.
-        :param kwargs: See `https://abetlen.github.io/llama-cpp-python/#llama_cpp.llama.Llama.__init__`. For max_length, we use the 128 'max_tokens' setting.
-        """
         if model_name_or_path is None or len(model_name_or_path) == 0:
             raise ValueError("model_name_or_path cannot be None or empty string")
 
@@ -73,10 +67,7 @@ class LlamaCPPInvocationLayer(PromptModelInvocationLayer):
     
 
     def _ensure_token_limit(self, prompt: Union[str, List[Dict[str, str]]]) -> Union[str, List[Dict[str, str]]]:
-        """Ensure that length of the prompt and answer is within the maximum token length of the PromptModel.
-
-        :param prompt: Prompt text to be sent to the generative model.
-        """
+        
         if not isinstance(prompt, str):
             raise ValueError(f"Prompt must be of type str but got {type(prompt)}")
         
@@ -97,10 +88,6 @@ class LlamaCPPInvocationLayer(PromptModelInvocationLayer):
         return prompt
 
     def invoke(self, *args, **kwargs):
-        """
-        It takes a prompt and returns a list of generated text using the underlying model.
-        :return: A list of generated text.
-        """
         output: List[Dict[str, str]] = []
         stream = kwargs.pop("stream",False)
 
@@ -109,7 +96,6 @@ class LlamaCPPInvocationLayer(PromptModelInvocationLayer):
         if kwargs and "prompt" in kwargs:
             prompt = kwargs.pop("prompt")
 
-            # For more details refer to call documentation for Llama CPP https://abetlen.github.io/llama-cpp-python/#llama_cpp.llama.Llama.__call__
             model_input_kwargs = {
                 key: kwargs[key]
                 for key in [
@@ -135,13 +121,5 @@ class LlamaCPPInvocationLayer(PromptModelInvocationLayer):
         return generated_texts
 
     def supports(cls, model_name_or_path: str, **kwargs) -> bool:
-        """
-        Checks if the given model is supported by this invocation layer.
-
-        :param model_name_or_path: The name or path of the model.
-        :param kwargs: Additional keyword arguments passed to the underlying model which might be used to determine
-        if the model is supported.
-        :return: True if this invocation layer supports the model, False otherwise.
-        """
-        #I guess there is not much to validate here ¯\_(ツ)_/¯
+    
         return model_name_or_path is not None and len(model_name_or_path) > 0
