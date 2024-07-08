@@ -28,7 +28,7 @@ To get started with the Reading Companion Project, follow these steps:
 
 2. **Create and activate a virtual environment**
 
-'''bash
+```bash
 python -m venv venv
 source venv/bin/activate   # On Windows, use `venv\Scripts\activate`
 
@@ -38,15 +38,16 @@ source venv/bin/activate   # On Windows, use `venv\Scripts\activate`
 
 4. **Install the required dependencies**
 
-'''bash
+```bash
 pip install -r requirements.txt
 
 ## Usage
 After installing the necessary dependencies, you can start the application by running:
 
-'''bash
+```bash
 cd YouTube-Video-Summarization-App-main
 streamlit run yt_summary.py
+
 Open your web browser and navigate to http://localhost:8501 to access the Reading Companion interface.
 
 ## Technologies Used
