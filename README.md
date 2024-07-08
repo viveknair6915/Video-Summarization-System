@@ -2,6 +2,11 @@
 Welcome to the Reading Companion Project! This project aims to provide a supportive and interactive platform to enhance your reading experience. 
 Video Summarization App built using open source LLM and Framework like Llama 2, Haystack, Whisper, and Streamlit. This app smoothly runs on CPU as Llama 2 model is in GGUF format loaded through Llama.cpp.
 
+## Screenshots
+![Reading Companion](YouTube-Video-Summarization-App-main/screenshots/im1.jpeg)
+![Video Summarization](YouTube-Video-Summarization-App-main/screenshots/im2.jpeg)
+
+
 ## Table of Contents
 
 - [Features](#features)
