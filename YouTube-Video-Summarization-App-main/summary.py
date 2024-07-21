@@ -15,7 +15,7 @@ whisper = WhisperTranscriber()
 
 full_path = "llama-2-7b-32k-instruct.Q4_K_S.gguf"
 
-model = PromptModel(model_name_or_path=full_path, invocation_layer_class=LlamaCPPInvocationLayer, use_gpu=False, max_length=512)
+model = PromptModel(model_name_or_path=full_path, invocation_layer_class=LlamaCPPInvocationLayer, use_gpu=False, max_length=5120)
 
 print(model)
 
