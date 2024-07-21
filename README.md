@@ -4,7 +4,7 @@ Video Summarization System built using open source LLM and Framework like Llama 
 
 ## Screenshots
 ![Reading Companion](YouTube-Video-Summarization-App-main/screenshots/im1.jpeg)
-![Video Summarization](YouTube-Video-Summarization-App-main/screenshots/im2.jpeg)
+![Video Summarization](YouTube-Video-Summarization-App-main/screenshots/im3.png)
 
 
 ## Table of Contents
