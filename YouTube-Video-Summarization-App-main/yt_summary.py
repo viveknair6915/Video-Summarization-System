@@ -34,6 +34,7 @@ def download_video(url):
             'preferredquality': '192',
         }],
         'outtmpl': 'downloads/%(title)s.%(ext)s',
+        'quiet': True, 
     }
     with youtube_dl.YoutubeDL(ydl_opts) as ydl:
         result = ydl.extract_info(url, download=True)
@@ -44,13 +45,13 @@ def initialize_model(full_path):
     return PromptModel(
         model_name_or_path=full_path,
         invocation_layer_class=LlamaCPPInvocationLayer,
-        use_gpu=False,
+        use_gpu=True,
         max_length=512
     )
 
 def initialize_prompt_node(model):
     summary_prompt = "deepset/summarization"
-    return PromptNode(model_name_or_path=model, default_prompt_template=summary_prompt, use_gpu=False)
+    return PromptNode(model_name_or_path=model, default_prompt_template=summary_prompt, use_gpu=True) 
 
 def transcribe_audio(file_path, prompt_node):
     try:
